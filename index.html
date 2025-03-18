@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="qrText" placeholder="Escribe algo...">
+    <input type="color" id="qrColor" value="#000000">
+    <input type="color" id="bgColor" value="#ffffff">
+    <input type="number" id="qrSize" value="200">
+    <button onclick="generateQR()">Generar QR</button>
+    <button onclick="downloadQR()">Descargar QR</button>
+    <button onclick="copyQR()">Copiar QR</button>
+    <div id="qrContainer"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="scripts.js"></script>
+
+</body>
+</html>
