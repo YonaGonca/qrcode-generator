@@ -1,15 +1,32 @@
+window.addEventListener("load", (event) => {
+  let qrContainer = document.getElementById("qrContainer");
+  let qrColor = document.getElementById("qrColor").value;
+  let bgColor = document.getElementById("bgColor").value;
+
+  new QRCode(qrContainer, {
+    text: "qrcodegenerator-placeholder.com",
+    width: 200,
+    height: 200,
+    colorDark: qrColor,
+    colorLight: bgColor
+  });
+});
+
 function generateQR() {
     let text = document.getElementById("qrText").value;
     let qrContainer = document.getElementById("qrContainer");
     let qrColor = document.getElementById("qrColor").value;
     let bgColor = document.getElementById("bgColor").value;
-    let size = document.getElementById("qrSize").value;
+
+    if (!text) {
+      text = "qrcodegenerator-placeholder.com";
+    }
 
     qrContainer.innerHTML = ""; // Limpiar QR anterior
     new QRCode(qrContainer, {
       text: text,
-      width: size,
-      height: size,
+      width: 200,
+      height: 200,
       colorDark: qrColor,
       colorLight: bgColor
     });

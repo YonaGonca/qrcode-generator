@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
 </head>
-<body>
-    <input type="text" id="qrText" placeholder="Escribe algo...">
-    <input type="color" id="qrColor" value="#000000">
-    <input type="color" id="bgColor" value="#ffffff">
-    <input type="number" id="qrSize" value="200">
-    <button onclick="generateQR()">Generar QR</button>
-    <button onclick="downloadQR()">Descargar QR</button>
-    <button onclick="copyQR()">Copiar QR</button>
-    <div id="qrContainer"></div>
 
+<body>
+    <h1>QR Code Generator</h1>
+    <div id="qrcode-container">
+        <div id="qrcode-inputs">
+            <h2>Enter your website:</h2>
+            <input type="text" id="qrText" placeholder="https://" oninput="generateQR()">
+            <h2>Colors:</h2>
+            <input type="color" id="qrColor" value="#000000" onchange="generateQR()">
+            <input type="color" id="bgColor" value="#ffffff" onchange="generateQR()">
+            <br>
+         </div>
+        <div id="qrcode-preview">
+            <h2>QR Code Preview</h2>
+            <div id="qrContainer"></div>
+        </div>
+    </div>
+    <div id="buttons">
+        <button onclick="downloadQR()">Download QR</button>
+        <button onclick="copyQR()">Copy QR</button>    
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="scripts.js"></script>
 
 </body>
+
 </html>
